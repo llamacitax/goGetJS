@@ -147,3 +147,11 @@ func main() {
 	app.infoLog.Printf("took %f seconds\n", time.Since(start).Seconds())
 	fmt.Println("============================================================")
 }
+func initDirectories() {
+	if _, err := os.Stat("Data"); os.IsNotExist(err) {
+		os.Mkdir("Data", os.ModePerm)
+	}
+	if _, err := os.Stat("searchResults"); os.IsNotExist(err) {
+		os.Mkdir("Data", os.ModePerm)
+	}
+}
